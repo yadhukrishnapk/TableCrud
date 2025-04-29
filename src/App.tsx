@@ -7,6 +7,7 @@ import Body from './components/login/body/Body';
 import PrivateRoute from './components/auth/PrivateRoute';
 import { useAuth } from './hooks/useAuth';
 import Home from './components/home/Home';
+import EmployeeDetails from './components/home/employeeDetail/EmployeeDetail';
 
 const AppContent = () => {
   useAuth();
@@ -14,7 +15,10 @@ const AppContent = () => {
   return (
     <Routes>
       <Route path="/login" element={<Body />} />
-      <Route path="/" element={<PrivateRoute element={<Home />} />} />
+      <Route path="/" element={<PrivateRoute element={<Home />} />}>
+        <Route path="page/:page" element={<PrivateRoute element={<Home />} />} />
+      </Route>
+      <Route path="/employee/:id" element={<PrivateRoute element={<EmployeeDetails />} />} />
     </Routes>
   );
 };
