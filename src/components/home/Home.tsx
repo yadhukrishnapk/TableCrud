@@ -9,6 +9,7 @@ import "./Home.css";
 import { User, AuthState } from "../../types/auth";
 import { Employee, EmployeesResponse } from "../../types/employee";
 import Header from "./header/Header";
+import ErrorDisplay from "../error/ErrorDisplay";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -70,16 +71,9 @@ const Home = () => {
   const pages = getPageNumbers();
 
   if (error) {
-    return (
-      <Alert variant="danger" className="m-4">
-        <Alert.Heading>Error loading employees</Alert.Heading>
-        <p>{error.message}</p>
-        <Button variant="danger" onClick={() => mutate()} className="mt-2">
-          Retry
-        </Button>
-      </Alert>
-    );
+    return <ErrorDisplay message={error.message} onRetry={() => mutate()} />;
   }
+
 
   return (
     <div className="home-wrapper">

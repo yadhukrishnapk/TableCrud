@@ -7,6 +7,7 @@ import { getGenderLabel } from "../../../utils/genderMapping";
 import Header from "../header/Header";
 import { useAuth } from "../../../hooks/useAuth";
 import { useAuthActions } from "../../../services/authService";
+import EditEmployeeForm from "../employeeDetail/edit/formEdit/FormEdit";
 import { EmployeeResponse } from "../../../types/employee";
 
 const EMPLOYEE_UPDATE_API = "https://core-skill-test.webc.in/employee-portal/api/v1/employee/update";
@@ -247,38 +248,19 @@ const EmployeeDetails: React.FC = () => {
           </Modal.Header>
           <Modal.Body className="p-0">
             {employee && (
-              <div>
-                {/* Placeholder for EditEmployeeForm */}
-                <p>Edit form will be implemented here</p>
-                <input
-                  type="file"
-                  onChange={handleFileChange}
-                  accept="image/*"
-                  className="form-control mb-3"
-                />
-                <Button
-                  variant="primary"
-                  onClick={() => handleFormSubmit(employee)}
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? "Submitting..." : "Submit"}
-                </Button>
-                <Button
-                  variant="secondary"
-                  onClick={() => {
-                    setShowEditModal(false);
-                    setSubmitError(null);
-                  }}
-                  className="ms-2"
-                >
-                  Cancel
-                </Button>
-                {submitError && (
-                  <Alert variant="danger" className="mt-3">
-                    {submitError}
-                  </Alert>
-                )}
-              </div>
+              <EditEmployeeForm
+                formData={employee}
+                onFileChange={handleFileChange}
+                onSubmit={handleFormSubmit}
+                onCancel={() => {
+                  setShowEditModal(false);
+                  setSubmitError(null);
+                }}
+                isSubmitting={isSubmitting}
+                submitError={submitError}
+                currentImage={employee.profile_picture}
+                isModal={true}
+              />
             )}
           </Modal.Body>
         </Modal>
