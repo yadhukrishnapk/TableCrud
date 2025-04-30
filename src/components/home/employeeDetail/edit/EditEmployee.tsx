@@ -3,11 +3,11 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Container, Spinner, Alert } from 'react-bootstrap';
 import axios from "axios";
 import { useEmployeeDetails } from "../../../../hooks/useEmployee";
-import EditEmplo
 import Header from "../../header/Header";
 import { useAuth } from "../../../../hooks/useAuth";
 import { useAuthActions } from "../../../../services/authService";
 import { EmployeeResponse } from "../../../../types/employee";
+import EditEmployeeForm from "./formEdit/FormEdit";
 
 const EMPLOYEE_UPDATE_API = "https://core-skill-test.webc.in/employee-portal/api/v1/employee/update";
 

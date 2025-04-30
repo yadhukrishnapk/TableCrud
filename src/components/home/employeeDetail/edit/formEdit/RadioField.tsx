@@ -22,6 +22,7 @@ const RadioField: React.FC<RadioFieldProps> = ({ label, name, options, validate 
         {options.map((option) => (
           <div key={option.value} className="form-check">
             <Radio
+              name={name}
               value={option.value}
               className="form-check-input"
               id={`${name}-${option.value}`}

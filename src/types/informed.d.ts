@@ -62,4 +62,26 @@ declare module 'informed' {
     fieldApi: FieldApi;
     render: (children: React.ReactNode) => React.ReactNode;
   };
+ // Add RadioGroup and Radio component types
+ export interface RadioGroupProps extends FieldProps {
+  children: React.ReactNode;
+}
+
+export interface RadioProps extends FieldProps {
+  value: string | number;
+  className?: string;
+  id?: string;
+}
+
+export const Form: React.ComponentType<FormProps>;
+export const RadioGroup: React.FC<RadioGroupProps>;
+export const Radio: React.FC<RadioProps>;
+
+export function useForm(): { formState: FormState; formApi: FormApi };
+
+export function useField<T = any>(props: FieldProps): {
+  fieldState: FieldState;
+  fieldApi: FieldApi;
+  render: (children: React.ReactNode) => React.ReactNode;
+};
 }

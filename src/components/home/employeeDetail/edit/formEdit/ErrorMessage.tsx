@@ -1,15 +1,21 @@
-// src/components/ErrorMessage.tsx
 import React from "react";
 import { useFormState } from "informed";
-import { FormState } from "../../../../../types/informed";
 
 interface ErrorMessageProps {
   name: string;
 }
 
 const ErrorMessage: React.FC<ErrorMessageProps> = ({ name }) => {
-  const formState = useFormState() as FormState;
-  const error = formState.errors?.[name];
+  let formState;
+
+  try {
+    formState = useFormState();
+  } catch (e) {
+    // If not inside a <Form>, avoid rendering
+    return null;
+  }
+
+  const error = formState?.errors?.[name];
 
   if (error) {
     const element = document.querySelector<HTMLInputElement>(`[name="${name}"]`);
