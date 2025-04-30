@@ -3,7 +3,7 @@ declare module 'informed' {
   export interface FormState {
     values: { [key: string]: any };
     errors?: { [key: string]: string };
-    pristine: boolean;  // Added pristine field
+    pristine: boolean;  
     touched?: boolean;
     dirty?: boolean;
     invalid?: boolean;
@@ -62,7 +62,6 @@ declare module 'informed' {
     fieldApi: FieldApi;
     render: (children: React.ReactNode) => React.ReactNode;
   };
- // Add RadioGroup and Radio component types
  export interface RadioGroupProps extends FieldProps {
   children: React.ReactNode;
 }
@@ -76,9 +75,11 @@ export interface RadioProps extends FieldProps {
 export const Form: React.ComponentType<FormProps>;
 export const RadioGroup: React.FC<RadioGroupProps>;
 export const Radio: React.FC<RadioProps>;
+export const Input: React.FC<FieldProps>; 
+export const Select: React.FC<FieldProps>;
 
 export function useForm(): { formState: FormState; formApi: FormApi };
-
+export function useFormState(): FormState; 
 export function useField<T = any>(props: FieldProps): {
   fieldState: FieldState;
   fieldApi: FieldApi;

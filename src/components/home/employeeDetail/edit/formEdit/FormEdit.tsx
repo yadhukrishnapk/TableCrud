@@ -15,7 +15,7 @@ interface EditEmployeeFormProps {
   formData: Partial<EmployeeResponse>;
   onFileChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onSubmit: (formData: Partial<EmployeeResponse>) => Promise<void>;
-  onCancel: () => void;
+  onCancel: () => void; 
   isSubmitting: boolean;
   submitError: string | null;
   currentImage?: string;
