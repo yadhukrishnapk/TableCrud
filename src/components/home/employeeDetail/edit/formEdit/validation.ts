@@ -42,7 +42,6 @@ export const requiredField = (field: string) => (value: any): string | undefined
       return 'Bank Account Number is required';
     }
   
-    // Validates Indian bank account numbers (9-18 digits)
     const accountRegex = /^[0-9]{9,18}$/;
   
     if (!accountRegex.test(value)) {
@@ -57,7 +56,6 @@ export const requiredField = (field: string) => (value: any): string | undefined
       return 'IFSC Code is required';
     }
   
-    // Validates Indian IFSC code format (4 letters followed by 0 and 6 alphanumeric characters)
     const ifscRegex = /^[A-Z]{4}0[A-Z0-9]{6}$/;
   
     if (!ifscRegex.test(value)) {

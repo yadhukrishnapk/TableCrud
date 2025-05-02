@@ -1,4 +1,3 @@
-// src/hooks/useAuth.ts
 import { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAtom } from 'jotai';
@@ -27,5 +26,5 @@ export const useAuth = () => {
       }
     }, [setAuth, navigate, location.pathname]);
   
-    return { isAuthenticated, user: auth.user }; // <-- ADD user here
+    return { isAuthenticated, user: auth.user }; 
   };

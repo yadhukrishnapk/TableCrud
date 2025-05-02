@@ -11,7 +11,6 @@ const ErrorMessage: React.FC<ErrorMessageProps> = ({ name }) => {
   try {
     formState = useFormState();
   } catch (e) {
-    // If not inside a <Form>, avoid rendering
     return null;
   }
 

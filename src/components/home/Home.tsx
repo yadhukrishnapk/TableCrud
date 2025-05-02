@@ -6,7 +6,6 @@ import { useAuth } from "../../hooks/useAuth";
 import { useEmployees } from "../../hooks/useEmployee";
 import EmployeeTable from "./employeeTable/EmployeeTable";
 import "./Home.css";
-import { User, AuthState } from "../../types/auth";
 import { Employee, EmployeesResponse } from "../../types/employee";
 import Header from "./header/Header";
 import ErrorDisplay from "../error/ErrorDisplay";

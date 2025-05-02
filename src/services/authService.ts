@@ -4,7 +4,7 @@ import { useAtom } from 'jotai';
 import { authAtom } from '../store/authStore';
 import { LoginResponse ,AuthState } from '../types/auth';
 
-const BASE_URL = 'https://core-skill-test.webc.in/employee-portal/api/v1';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const api = axios.create({
   baseURL: BASE_URL,
   timeout: 10000,

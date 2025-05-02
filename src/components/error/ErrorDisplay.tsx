@@ -1,4 +1,3 @@
-// src/components/common/ErrorPage.tsx
 import { useState } from "react";
 import { AlertCircle, RefreshCw } from "lucide-react";
 
@@ -15,7 +14,6 @@ const ErrorPage = ({ message, onRetry, title = "Something went wrong" }: ErrorPa
     if (onRetry) {
       setIsRetrying(true);
       
-      // Add a small delay to show the loading state
       setTimeout(() => {
         onRetry();
         setIsRetrying(false);

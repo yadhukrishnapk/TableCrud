@@ -1,7 +1,6 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 
-// Define interfaces for imported components and utilities
 interface FormFieldProps {
   label: string;
   name: string;
@@ -31,12 +30,10 @@ interface GenderOption {
   label: string;
 }
 
-// Type for validation functions
 type Validator = (value: string) => string | null;
 
-// Props interface for PersonalInformation component
 interface PersonalInformationProps {
-  today: string; // Assuming today is a string in format like "YYYY-MM-DD"
+  today: string; 
   requiredField: (fieldName: string) => Validator;
   validatePhone: Validator;
   validateJoiningDate: Validator;

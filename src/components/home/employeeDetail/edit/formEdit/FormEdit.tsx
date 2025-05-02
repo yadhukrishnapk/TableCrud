@@ -22,12 +22,12 @@ interface EditEmployeeFormProps {
   isModal?: boolean;
 }
 
-interface MasterDataItem {
-  id: string;
-  name?: string;
-  title?: string;
-  [key: string]: any;
-}
+// interface MasterDataItem {
+//   id: string;
+//   name?: string;
+//   title?: string;
+//   [key: string]: any;
+// }
 
 const EditEmployeeForm: React.FC<EditEmployeeFormProps> = ({
   formData,

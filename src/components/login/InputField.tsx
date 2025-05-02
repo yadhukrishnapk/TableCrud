@@ -3,17 +3,18 @@ import { useState } from 'react';
 import { useField } from 'informed';
 import { InputGroup } from 'react-bootstrap';
 import { Eye, EyeOff } from 'lucide-react';
-import { FieldProps,FieldState } from '../../types/informed';
+import { FieldProps,FieldState } from 'informed';
 
-interface InputFieldProps extends FieldProps {
-    label?: string;
-    fieldType?: 'text' | 'password';
-    required?: boolean;
-    placeholder?: string;
-    icon?: React.ReactNode;
-    disabled?: boolean;
-  }
-  
+interface InputFieldProps extends Omit<FieldProps, 'name'> {
+  name: string; // ✅ Explicitly define it
+  label?: string;
+  fieldType?: 'text' | 'password';
+  required?: boolean;
+  placeholder?: string;
+  icon?: React.ReactNode;
+  disabled?: boolean;
+}
+
   const InputField = ({
     label,
     name,
@@ -56,7 +57,7 @@ interface InputFieldProps extends FieldProps {
           {icon && <InputGroup.Text className="input-icon">{icon}</InputGroup.Text>}
           <input
             id={inputId}
-            name={name} // ✅ Add name to input explicitly
+            name={name}
             type={actualFieldType}
             value={value || ''}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
