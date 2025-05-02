@@ -66,6 +66,7 @@ const EmployeeDetails: React.FC = () => {
           "Content-Type": "multipart/form-data",
         },
       });
+      console.log("response: ", response);
       
       await mutate({ ...employee, ...formData } as EmployeeResponse, false);
       await mutate();

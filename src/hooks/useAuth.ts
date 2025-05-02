@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAtom } from 'jotai';
 import { authAtom, isAuthenticatedAtom } from '../store/authStore';
-import { AuthState, User } from '../types/auth';
+import { User } from '../types/auth';
 
 export const useAuth = () => {
     const [auth, setAuth] = useAtom(authAtom);

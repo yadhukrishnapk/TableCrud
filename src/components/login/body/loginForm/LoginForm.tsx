@@ -1,4 +1,3 @@
-// src/components/login/loginform/LoginForm.tsx
 import { useState } from 'react';
 import { Form } from 'informed';
 import { User, Lock, Loader } from 'lucide-react';
@@ -6,7 +5,7 @@ import { Button } from 'react-bootstrap';
 import InputField from '../../InputField';
 import { validateUsername,validatePassword } from '../../validateLogin';
 import './LoginForm.css';
-import { LoginFormValues,LoginErrors } from '../../../../types/auth';
+import { LoginErrors } from '../../../../types/auth';
 import { FormState } from 'informed';
 
 interface LoginFormProps {

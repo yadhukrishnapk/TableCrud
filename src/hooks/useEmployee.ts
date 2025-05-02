@@ -1,13 +1,13 @@
 import useSWR from 'swr';
 import { employeeService } from '../services/apiEmployees';
-import { EmployeesResponse, EmployeeResponse } from '../types/employee';
+import {  EmployeeResponse } from '../types/employee';
 
-interface EmployeeQueryParams {
-  page: number;
-  sortOrder: string;
-  sortBy: string;
-  pageSize?: number;
-}
+// interface EmployeeQueryParams {
+//   page: number;
+//   sortOrder: string;
+//   sortBy: string;
+//   pageSize?: number;
+// }
 
 interface UseEmployeesResult {
   employees: EmployeeResponse[];

@@ -34,6 +34,8 @@ const SelectField: React.FC<SelectFieldProps> = ({
 }) => {
   const formState: FormState = useFormState();
   const fieldError = formState.errors?.[name];
+  console.log("fieldError: ", fieldError);
+  
 
   return (
     <Form.Group className="mb-3">

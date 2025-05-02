@@ -1,12 +1,12 @@
 // src/components/home/Home.tsx
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { Container, Row, Col, Button, Spinner, Alert } from "react-bootstrap";
+import { Container, Row, Col, Button, Spinner } from "react-bootstrap";
 import { useAuthActions } from "../../services/authService";
 import { useAuth } from "../../hooks/useAuth";
 import { useEmployees } from "../../hooks/useEmployee";
 import EmployeeTable from "./employeeTable/EmployeeTable";
 import "./Home.css";
-import { Employee, EmployeesResponse } from "../../types/employee";
+import { Employee } from "../../types/employee";
 import Header from "./header/Header";
 import ErrorDisplay from "../error/ErrorDisplay";
 

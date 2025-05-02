@@ -12,7 +12,7 @@ export const authAtom = atom(
     user: get(userAtom),
     isAuthenticated: get(isAuthenticatedAtom),
   }),
-  (get, set, update: Partial<AuthState> | { token: null; user: null }): void => {
+  (_, set, update: Partial<AuthState> | { token: null; user: null }): void => {
     if (
       'token' in update &&
       'user' in update &&

@@ -21,7 +21,7 @@ interface EmployeeTableProps {
 
 const EmployeeTable = ({
   employees,
-  navigate,
+  // navigate,
   onSort,
   currentSortBy,
   currentSortOrder,
