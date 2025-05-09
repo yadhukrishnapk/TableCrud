@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Container, Row, Col, Card, Button, Spinner, Alert, Image, Modal } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Alert, Image, Modal } from 'react-bootstrap';
 import axios from "axios";
 import { useEmployeeDetails } from "../../../hooks/useEmployee";
 import { getGenderLabel } from "../../../utils/genderMapping";
