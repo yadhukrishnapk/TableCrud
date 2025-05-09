@@ -1,6 +1,6 @@
 // src/components/home/Home.tsx
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { Container, Row, Col, Button, Spinner } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { useAuthActions } from "../../services/authService";
 import { useAuth } from "../../hooks/useAuth";
 import { useEmployees } from "../../hooks/useEmployee";
@@ -9,6 +9,7 @@ import "./Home.css";
 import { Employee } from "../../types/employee";
 import Header from "./header/Header";
 import ErrorDisplay from "../error/ErrorDisplay";
+import { Atom } from "react-loading-indicators";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -91,7 +92,7 @@ const Home = () => {
 
               {isLoading && !employees.length ? (
                 <div className="loading-spinner">
-                  <Spinner animation="border" variant="primary" />
+              <Atom color={["#1d33d9", "#d91d91", "#d9c31d", "#1dd965"]} />
                 </div>
               ) : (
                 <>

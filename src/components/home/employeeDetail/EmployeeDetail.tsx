@@ -9,8 +9,9 @@ import { useAuth } from "../../../hooks/useAuth";
 import { useAuthActions } from "../../../services/authService";
 import EditEmployeeForm from "../employeeDetail/edit/formEdit/FormEdit";
 import { EmployeeResponse } from "../../../types/employee";
+import { BlinkBlur } from "react-loading-indicators";
 
-const EMPLOYEE_UPDATE_API = "https://core-skill-test.webc.in/employee-portal/api/v1/employee/update";
+const EMPLOYEE_UPDATE_API = `${import.meta.env.VITE_API_BASE_URL}/employee/update`;
 
 interface DetailItemProps {
   label: string;
@@ -95,7 +96,7 @@ const EmployeeDetails: React.FC = () => {
     if (isLoading) {
       return (
         <div className="d-flex justify-content-center align-items-center" style={{ height: '200px' }}>
-          <Spinner animation="border" variant="primary" />
+         <BlinkBlur color={["#1d33d9", "#d91d91", "#d9c31d", "#1dd965"]} />
         </div>
       );
     }
